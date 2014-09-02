@@ -39,42 +39,53 @@ print 'tweets with >5 retweets:\t', len(tweet_IDs)
 delta = 100
 all_tweet_retweeters = []
 
-for tid in tweet_IDs:
+for tid in tweet_IDs[353:]:
     
     # get a list of IDs of the re-tweeters:
     sleep(60)    # (rate limit: 15 requests / 15 min)
     req_string = 'https://api.twitter.com/1.1/statuses/retweeters/ids.json?id=' \
                   + tid + '&stringify_ids=true'
     resp = requests.get(req_string, auth=oauth)
-    retweeter_list = resp.json()['ids']
+    
+    try:
+        retweeter_list = resp.json()['ids']
 
-    # get the number of followers each re-tweeter has
-    start_idx = 0
-    retweeter_followers = {}
-    while start_idx < len(retweeter_list):
+        # get the number of followers each re-tweeter has
+        start_idx = 0
+        retweeter_followers = {}
+        while start_idx < len(retweeter_list):
 
-        # request user data for up to 100 retweeters at once:
-        sleep(5)    # (rate limit: 180 requests / 15 min)
-        req_string = 'https://api.twitter.com/1.1/users/lookup.json?user_id=' \
-                      + ','.join(retweeter_list[start_idx:start_idx+delta])
-        resp = requests.get(req_string, auth=oauth)
+            # request user data for up to 100 retweeters at once:
+            sleep(5)    # (rate limit: 180 requests / 15 min)
+            req_string = 'https://api.twitter.com/1.1/users/lookup.json?user_id=' \
+                          + ','.join(retweeter_list[start_idx:start_idx+delta])
+            resp = requests.get(req_string, auth=oauth)
 
-        # get & add the followers count to the summedDC:
-        for user in resp.json():
-            retweeter_followers[user['screen_name']] = user['followers_count']
+            # get & add the followers count to the summedDC:
+            for user in resp.json():
+                retweeter_followers[user['screen_name']] = user['followers_count']
 
-        start_idx += delta
+            start_idx += delta
 
-    # add the new data & rewrite the output file anew:
-    tweet_rewtweeters_followercount = {}
-    tweet_rewtweeters_followercount['tweet_id'] = tid
-    tweet_rewtweeters_followercount['retweeters'] = retweeter_followers
-    all_tweet_retweeters.append(tweet_rewtweeters_followercount)    
-    with file('retweeter_info.json','w') as outfile:
-        json.dump(all_tweet_retweeters, outfile, indent=4)
+        # add the new data & rewrite the output file anew:
+        tweet_rewtweeters_followercount = {}
+        tweet_rewtweeters_followercount['tweet_id'] = tid
+        tweet_rewtweeters_followercount['retweeters'] = retweeter_followers
+        all_tweet_retweeters.append(tweet_rewtweeters_followercount)    
+        with file('retweeter_info.json','w') as outfile:
+            json.dump(all_tweet_retweeters, outfile, indent=4)
+    except:
+        print 'tweet id:', tid
+        print 'reponse code:', resp
+        print 'resp.text:', resp.text
+        print '\n'
 
         
     # TODO: add meaningful key/value to retweeter screen_name and followers_count
+
+# <codecell>
+
+478-len(all_tweet_retweeters)
 
 # <codecell>
 
