@@ -17,10 +17,11 @@ def load_json(filename):
 
 # <codecell>
 
+# note: below, we are getting data for both films.
+
 # load the tweets & get a list of all tweet IDs that have nonzero retweets:
 tweets = load_json('./data/twitter_posts.json')
 tweet_IDs = [t['tweet_id'] for t in tweets if t['n_retweets'] > 5]
-
 
 # note: considering only tweets with >5 retweets brings this script from 
 # 48 to 8 hours runtime.
@@ -36,10 +37,13 @@ print 'tweets with >5 retweets:\t', len(tweet_IDs)
 # number of followers for each retweeter. This can be used as a proxy to
 # measure the impact of each tweet.
 
+# TODO: make this function that takes in a list of tweetIDs and either
+# outputs a file or returns a dict, based on specified arguments.
+
 delta = 100
 all_tweet_retweeters = []
 
-for tid in tweet_IDs[353:]:
+for tid in tweet_IDs:
     
     # get a list of IDs of the re-tweeters:
     sleep(60)    # (rate limit: 15 requests / 15 min)
@@ -75,6 +79,8 @@ for tid in tweet_IDs[353:]:
         with file('retweeter_info.json','w') as outfile:
             json.dump(all_tweet_retweeters, outfile, indent=4)
     except:
+        # Info for some tweets, e.g. the one with id# 438693264359968768, 
+        # cannot be accessed. (TODO: find out why.)
         print 'tweet id:', tid
         print 'reponse code:', resp
         print 'resp.text:', resp.text
@@ -85,7 +91,13 @@ for tid in tweet_IDs[353:]:
 
 # <codecell>
 
-478-len(all_tweet_retweeters)
+# How many tweets with >5 rewteets are from "The Square"'s account?
+tweets_sq = [t['tweet_id'] for t in tweets \
+     if t['n_retweets'] > 5 \
+    and t['user']['screen_name'] == 'TheSquareFilm']
+
+
+len(tweets_sq)
 
 # <codecell>
 
