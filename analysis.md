@@ -6,6 +6,7 @@ The films have both significant similarities and differences. Both tell the stor
 
 Modern tools of social media provide a great opportunity for filmmakers to promote their work and keep followers updated with news. However, it can be challenging to know how to best manage these tools. To this end, the brief analysis shown below looks at a set of tweets and begins to examine at how their content correlates with impact.
 
+Note: Since the data set for the "The Square" contains many more tweets than that for "How to Survive a Plague" (3156 instead of 1309) and is over a much shorter time span (2 months instead of 2+ years), we focus out analyis on that data set. Corresponding plots for "How to Survive a Plague" are found in the Appendix.
 
 
 ## Measuring impact: beyond retweets
@@ -15,9 +16,9 @@ For a given tweet, a particularly helpful proxy measurement of impact is the num
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Contents of tweets for 'The Square' 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pie_0retweets.png"  width=215/>
-  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pie_1to5retweets.png" width=250/>
-  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pie_morethan5retweets.png" width=250/>
+  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_pie_0retweets.png"  width=215/>
+  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_pie_1to5retweets.png" width=250/>
+  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_pie_morethan5retweets.png" width=250/>
 </p>
 
 The above plots indicate that the lowest impact tweets typically contain no links, hashtags, or photos. Tweets with a few retweets more often contain hashtags sometimes combined with links. Both make good sense -- hashtags allow tweets to arise when users sort feeds using them, and links may be to articles that elaborate on an important issue or news item. The tweets with the highest numbers of rewteets have hashtags that are sometimes combined with photographs. Though there are certainly more details worth considering, this begins to suggest how to better get people's attention on Twitter. Looking at the highly-retweeted tweets in particular, hashtags alone seem about as useful as useful as hashtags combined with photos. But let's look closer at this subset of data...
@@ -27,7 +28,7 @@ Tweets that reach many users of social media are not just retweeted, but retweet
 For each tweet that was used for the ">5 retweets" pie chart above, this <strong>summed followers measurement</strong> was computed. These values ranged from 304 to 2052877; 52 on the order of 10<sup>6</sup> and 6 were on the order of 10<sup>7</sup> (histograms can be viewed [here](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/summed_followers_hist.png) ). These data were then segmented into quantiles -- the top 10 tweets were contained in the highest quantile, the 20th to 11th highest values were in the next highest set, and so on. Finally, these ten sets were then analyzed in the same manner as the pie charts above.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/stackedbar_morethan5retweets_quantiles.png"  width=400/>
+  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_stackedbar_morethan5retweets_quantiles.png"  width=400/>
 </p>
 
 This breakdown provides a closer look at the data contained in the ">5 retweets" pie chart above. In particular, we now can see that the very highest-impact tweets tend to contain both photos & hashtags (green) when compared to hashtags only (yellow), which are found in the lower quantile. In the pie chart above, all these data were aggregated together and the usefulness of a photo in addition to a hashtag was not clear.
@@ -41,6 +42,7 @@ This analysis sheds some light on how tweet content relates to impact, however, 
 - A subset of tweets posted by an account will also be retweets of other accounts. How to manage this is a separate issue.
 - The follower count for each retweeter was summed for each tweet, however this is not generally a sum of unique users. Users may follow more than 1 of the retweeters.
 - Analysis, the associated code could be straightforwardly refactored so it can take in a tweet data set and return these plots.
+- A subset of the ">5 retweet" data were not used for stacked bar plot, since these results require some extra handling.
 
 
 Future work might consider:
@@ -51,3 +53,19 @@ Future work might consider:
 - How should anything learned for a film/account of a given size be applied to larger or smaller films?
 - Other tweets, users have control over how their profile is designed. How can this be optimized?
 - How do any discovered patterns vary by location and native language?
+
+__________________________
+
+### Appendix
+<p></p>
+
+#### Tweet content plots for "How to Survive a Plague"
+<p></p>
+
+- [pie plot, tweets with 0 retweets](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pl_pie_0retweets.png)
+
+- [pie plot, tweets with 1 to 5 retweets](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pl_pie_1to5retweets.png)
+
+- [pie plot, tweets with >5 retweets](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pl_pie_morethan5retweets.png)
+
+- [stacked bar plot with 10-quantile breakdown for tweets with >5 retweets](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pl_stackedbar_morethan5retweets_quantiles.png)
