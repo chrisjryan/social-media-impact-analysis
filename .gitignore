@@ -1,4 +1,3 @@
-data
 assignment.pdf
 *.txt
 eda.py
@@ -7,3 +6,6 @@ twapi.py*
 tweet_imact_analysis.py
 json
 *pyc
+data/facebook_posts.json
+data/facebook_profiles.json
+data/twitter_profiles.json
