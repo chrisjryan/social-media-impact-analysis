@@ -1,0 +1,1 @@
+Please see 'analysis.md' for a discussion of the analysis carried out in this repo, or eda.html to see an iPython Notebook containing more exploratory data analysis.
