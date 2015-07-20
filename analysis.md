@@ -16,22 +16,22 @@ For a given tweet, a particularly helpful proxy measurement of impact is the num
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Contents of tweets for 'The Square' 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_pie_0retweets.png"  width=215/>
-  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_pie_1to5retweets.png" width=250/>
-  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_pie_morethan5retweets.png" width=250/>
+  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_bar_0retweets.png"  width=215/>
+  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_bar_1to5retweets.png" width=250/>
+  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_bar_morethan5retweets.png" width=250/>
 </p>
 
 The above plots show that the lowest impact tweets typically contain no links, hashtags, or photos. Tweets with a few retweets more often contain hashtags sometimes combined with links. Both make good sense -- hashtags allow tweets to arise when users sort feeds using them, and links may be to articles that elaborate on an important issue or news item. The tweets with the highest numbers of rewteets have hashtags that are sometimes combined with photographs. Though there are certainly more details worth considering, this begins to suggest how to better get people's attention on Twitter. Looking at the highly-retweeted tweets in particular, hashtags alone seem about as useful as useful as hashtags combined with photos. <strong>But let's look closer at this subset of data...</strong>
 
 Tweets that reach many users of social media are not just retweeted, but are retweeted by users with a large following. To examine this, additional information was gathered from the Twitter API for each tweet that was retweeted more than 5 times. This information provided a follower count for each retweeter of each tweet. Thus, <strong>for each tweet in the ">5 retweets" subset, a sum of all the followers of each retweeter was calculated</strong>. As a shorthand, we can refer to this number as a <strong>summed followers count</strong> for each tweet in our set of interest. (Using terms from the theory social networks, this is the sum of the [degree centrality](http://en.wikipedia.org/wiki/Centrality#Degree_centrality) of each retweeter for a given tweet -- specifically the indegree centrality, since our network is a directed graph and it is the users' follower counts that are being added. But this is getting a bit beyond the scope here.)
 
-The values of the summed followers count for this data set ranged from 304 to 2052877; for 52 tweets this was on the order of 10<sup>6</sup> and for 6 tweets this was on the order of 10<sup>7</sup> (histograms can be viewed [here](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/summed_followers_hist.png) ). These data were then segmented into quantiles -- the top 10 tweets were contained in the tenth quantile, the 20th to 11th highest values were in the next highest set, and so on. Finally, the content of these ten sets were analyzed in the same manner as the pie charts above.
+The values of the summed followers count for this data set ranged from 304 to 2052877; for 52 tweets this was on the order of 10<sup>6</sup> and for 6 tweets this was on the order of 10<sup>7</sup> (histograms can be viewed [here](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/summed_followers_hist.png) ). These data were then segmented into quantiles -- the top 10 tweets were contained in the tenth quantile, the 20th to 11th highest values were in the next highest set, and so on. Finally, the content of these ten sets were analyzed in the same manner as the bar charts above.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_stackedbar_morethan5retweets_quantiles.png"  width=400/>
 </p>
 
-This breakdown provides a closer look at the data contained in the ">5 retweets" pie chart. In particular, it can now be seen that the very highest-impact tweets tend to contain both photos & hashtags (green) when compared to hashtags only (yellow), which are found in the lower quantile. In the pie chart, all these data were aggregated together and the usefulness of a photo in addition to a hashtag was not clear.
+This breakdown provides a closer look at the data contained in the ">5 retweets" bar chart. In particular, it can now be seen that the very highest-impact tweets tend to contain both photos & hashtags (green) when compared to hashtags only (yellow), which are found in the lower quantile. In the bar chart, all these data were aggregated together and the usefulness of a photo in addition to a hashtag was not clear.
 
 
 ## Discussion
@@ -61,10 +61,10 @@ __________________________
 #### Tweet content plots for "How to Survive a Plague"
 <p></p>
 
-- [pie plot, tweets with 0 retweets](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pl_pie_0retweets.png)
+- [bar plot, tweets with 0 retweets](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pl_bar_0retweets.png)
 
-- [pie plot, tweets with 1 to 5 retweets](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pl_pie_1to5retweets.png)
+- [bar plot, tweets with 1 to 5 retweets](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pl_bar_1to5retweets.png)
 
-- [pie plot, tweets with >5 retweets](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pl_pie_morethan5retweets.png)
+- [bar plot, tweets with >5 retweets](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pl_bar_morethan5retweets.png)
 
 - [stacked bar plot with 10-quantile breakdown for tweets with >5 retweets](https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/pl_stackedbar_morethan5retweets_quantiles.png)
