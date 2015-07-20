@@ -1,7 +1,7 @@
 Please see:
 
 - '[analysis.md](https://github.com/christopherjamesryan/social-media-impact-analysis/blob/master/analysis.md)' for a discussion of the work carried out in this repo
-- 'eda.html' to see an iPython Notebook containing more raw exploratory data analysis (HTML preview [here](http://htmlpreview.github.io/?https://github.com/christopherjamesryan/social-media-impact-analysis/blob/master/eda.html)).
+- 'eda.html' to see an iPython Notebook containing a more raw, exploratory data analysis (HTML preview [here](http://htmlpreview.github.io/?https://github.com/christopherjamesryan/social-media-impact-analysis/blob/master/eda.html)).
 
 <p></p>
 
