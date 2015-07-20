@@ -17,8 +17,8 @@ For a given tweet, a particularly helpful proxy measurement of impact is the num
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_bar_0retweets.png"  width=215/>
-  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_bar_1to5retweets.png" width=250/>
-  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_bar_morethan5retweets.png" width=250/>
+  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_bar_1to5retweets.png" width=215/>
+  <img src="https://raw.githubusercontent.com/christopherjamesryan/social-media-impact-analysis/master/sq_bar_morethan5retweets.png" width=215/>
 </p>
 
 The above plots show that the lowest impact tweets typically contain no links, hashtags, or photos. Tweets with a few retweets more often contain hashtags sometimes combined with links. Both make good sense -- hashtags allow tweets to arise when users sort feeds using them, and links may be to articles that elaborate on an important issue or news item. The tweets with the highest numbers of rewteets have hashtags that are sometimes combined with photographs. Though there are certainly more details worth considering, this begins to suggest how to better get people's attention on Twitter. Looking at the highly-retweeted tweets in particular, hashtags alone seem about as useful as useful as hashtags combined with photos. <strong>But let's look closer at this subset of data...</strong>
